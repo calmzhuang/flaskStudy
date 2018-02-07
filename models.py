@@ -11,17 +11,11 @@ class User(dba.Model):
     email = dba.Column(dba.String(120), index = True, unique = True)
     posts = dba.relationship('Post', backref='author', lazy='dynamic')
 
-    @property
-    def is_authenticated(self):
-        return True
+    dis_authenticated = True
 
-    @property
-    def is_active(self):
-        return True
+    is_active = True
 
-    @property
-    def is_anonymous(self):
-        return False
+    is_anonymous = False
 
     def get_id(self):
         try:
