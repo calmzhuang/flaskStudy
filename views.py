@@ -1,11 +1,13 @@
 from flask import render_template, flash, redirect, session, url_for, request, g
-from flask.ext.login import LoginManager, login_user, logout_user, current_user, login_required
+# from flask.ext.login import LoginManager, login_user, logout_user, current_user, login_required
+from flask_login import LoginManager, login_user, logout_user, current_user, login_required
 from models import dba, User, Post
 from forms import LoginForm
 from flask import Flask
 from config import DevConfig, basedir
 import os, config
-from flask.ext.openid import OpenID
+# from flask.ext.openid import OpenID
+from flask_openid import OpenID
 
 app = Flask(__name__)
 app.config.from_object(DevConfig)
